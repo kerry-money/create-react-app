@@ -68,6 +68,9 @@ module.exports = function(env = {}) {
           exclude: /node_modules(?![\\/]react-core)]/,
           use: {
             loader: 'babel-loader',
+            options: {
+              rootMode: 'upward',
+            },
           },
         },
         {
