@@ -25,9 +25,7 @@ module.exports = function(env = {}) {
         'babel-polyfill', // babel must be included before react or IE11 will not work
         'react',
         'react-dom',
-        './app/scripts/index.jsx',
-        './app/styles/global.scss',
-        'semantic-ui-less/semantic.less',
+        './src/index.js',
       ],
     },
     output: {
