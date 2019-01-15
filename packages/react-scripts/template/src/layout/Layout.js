@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Forbidden, SecureSession } from 'eh-walls';
-import { GlobalComponents } from 'prism-react';
+import { EhGlobalComponents } from 'prism-react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { hasAccessSelector, APP_SETTINGS } from 'eh-mortar';
@@ -49,7 +49,7 @@ export class Layout extends React.Component {
           <Route exact path="/" render={() => <div>Hello World!</div>} />
           <Route exact path="/forbidden" component={Forbidden} />
         </Switch>
-        <GlobalComponents />
+        <EhGlobalComponents />
       </SecureSession>
     );
   }
