@@ -186,7 +186,7 @@ module.exports = function(env = {}) {
       }),
       new CopyWebpackPlugin([
         {
-          from: 'app/images',
+          from: 'src/images',
           to: 'images',
         },
         {
