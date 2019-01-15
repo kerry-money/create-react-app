@@ -150,19 +150,14 @@ module.exports = function(env = {}) {
     plugins: [
       new CopyWebpackPlugin([
         {
-          from: path.resolve(
-            __dirname,
-            './node_modules/oidc-client/dist/oidc-client.min.js'
-          ),
+          from: './node_modules/oidc-client/dist/oidc-client.min.js',
           to: 'oidc-client.min.js',
         },
       ]),
       new HtmlWebpackPlugin({
         filename: 'renew-authentication-token.html',
-        template: path.resolve(
-          __dirname,
-          './node_modules/eh-mortar/lib/authentication/renewAuthenticationToken.ejs'
-        ),
+        template:
+          './node_modules/eh-mortar/lib/authentication/renewAuthenticationToken.ejs',
         chunks: [],
         hash: true,
       }),
