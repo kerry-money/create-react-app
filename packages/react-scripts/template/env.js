@@ -19,7 +19,10 @@
     },
   };
   window.__env = {
-    idpUrl: set('__IDP_URL__', 'https://qa.myidentifi.com/identityprovider'),
+    idpUrl: set(
+      '__IDP_URL__',
+      'https://qa-login.myidentifi.com/identityprovider'
+    ),
     idpClientId: set('__IDP_CLIENT_ID__', 'identifiui-localhost-devidp'),
     idpRequiredScopes: set(
       '__IDP_REQUIRED_SCOPES__',
