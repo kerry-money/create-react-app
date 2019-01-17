@@ -7,6 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const paths = require('./config/paths');
+
 process.traceDeprecation = true;
 
 module.exports = function(env = {}) {
@@ -63,6 +65,33 @@ module.exports = function(env = {}) {
     },
     module: {
       rules: [
+        // Disable require.ensure as it's not a standard language feature.
+        { parser: { requireEnsure: false } },
+
+        // First, run the linter.
+        // It's important to do this before Babel processes the JS.
+        {
+          test: /\.(js|mjs|jsx)$/,
+          enforce: 'pre',
+          use: [
+            {
+              options: {
+                formatter: require.resolve('react-dev-utils/eslintFormatter'),
+                eslintPath: require.resolve('eslint'),
+                // @remove-on-eject-begin
+                baseConfig: {
+                  extends: [require.resolve('eslint-config-react-app')],
+                },
+                ignore: false,
+                useEslintrc: false,
+                // @remove-on-eject-end
+              },
+              loader: require.resolve('eslint-loader'),
+            },
+          ],
+          include: paths.appSrc,
+        },
+
         {
           test: /\.jsx?$/,
           exclude: /node_modules(?![\\/]react-core)]/,

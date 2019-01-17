@@ -19,6 +19,7 @@
     "eslint-plugin-react": "7.x"
   },
   "dependencies": {
-    "confusing-browser-globals": "^1.0.5"
+    "confusing-browser-globals": "^1.0.5",
+    "prism-react": "git+ssh://git@github.com:Evolent-Health/prism-react.git#master"
   }
 }
