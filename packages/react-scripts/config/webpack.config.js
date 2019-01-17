@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const paths = require('react-scripts/config/paths');
+const paths = require('./paths');
 
 process.traceDeprecation = true;
 
