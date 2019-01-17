@@ -31,7 +31,7 @@ module.exports = function(env = {}) {
       ],
     },
     output: {
-      path: path.resolve(`.dist`),
+      path: path.resolve(`build`),
       filename: '[name].js',
       chunkFilename: '[chunkhash].js',
     },
