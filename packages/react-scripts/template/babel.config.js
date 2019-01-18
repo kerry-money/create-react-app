@@ -1,1 +1,1 @@
-module.exports = require('prism-react/configs/babel.config.js');
+module.exports = require("prism-react/configs/babel.config.js");

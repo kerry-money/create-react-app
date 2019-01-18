@@ -1,14 +1,14 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { Forbidden, SecureSession } from 'eh-walls';
-import { EhGlobalComponents } from 'prism-react';
-import axios from 'axios';
-import { connect } from 'react-redux';
-import { hasAccessSelector, APP_SETTINGS } from 'eh-mortar';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import PropTypes from "prop-types";
+import { Forbidden, SecureSession } from "eh-walls";
+import { EhGlobalComponents } from "prism-react";
+import axios from "axios";
+import { connect } from "react-redux";
+import { hasAccessSelector, APP_SETTINGS } from "eh-mortar";
 
-import { getUserProfile } from '../logic';
-import Header from './Header';
+import { getUserProfile } from "../logic";
+import Header from "./Header";
 
 // top margin is height of header; probably need to revisit header styling later as it
 // has not been reviewed by design team
@@ -22,12 +22,12 @@ export class Layout extends React.Component {
   }
   static propTypes = {
     getUserProfile: PropTypes.func,
-    hasAccess: PropTypes.bool,
+    hasAccess: PropTypes.bool
   };
 
   componentDidUpdate() {
     !this.props.hasAccess &&
-      window.location.replace(APP_SETTINGS.loginUrl + '/#/no-access');
+      window.location.replace(APP_SETTINGS.loginUrl + "/#/no-access");
   }
 
   async onAuthenticateSuccess() {
@@ -35,7 +35,7 @@ export class Layout extends React.Component {
   }
 
   setAuthorizationToken(token) {
-    axios.defaults.headers.common['Authorization'] = token;
+    axios.defaults.headers.common["Authorization"] = token;
   }
 
   render() {

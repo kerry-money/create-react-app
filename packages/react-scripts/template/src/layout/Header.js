@@ -1,23 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { Grid, Image } from 'semantic-ui-react';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { Grid, Image } from "semantic-ui-react";
 import {
   EhLayoutHeader,
   EhHeaderMenu,
   EhAlertModal,
-  showModal,
-} from 'prism-react';
-import { Session } from 'eh-mortar';
+  showModal
+} from "prism-react";
+import { Session } from "eh-mortar";
 
 export class LayoutHeader extends React.Component {
   state = {
-    signingOut: false,
+    signingOut: false
   };
 
   static propTypes = {
-    user: PropTypes.object,
+    user: PropTypes.object
   };
 
   render() {
@@ -45,38 +45,38 @@ export class LayoutHeader extends React.Component {
       <React.Fragment>
         <EhHeaderMenu
           icon="user circle"
-          header={user.firstName + ' ' + user.lastName}
+          header={user.firstName + " " + user.lastName}
           items={[
             {
-              display: 'Sign Out',
+              display: "Sign Out",
               onClick: () => {
                 let closeModal = showModal(
                   <EhAlertModal
                     heading="Are you sure you want to sign out?"
                     buttons={[
                       {
-                        content: 'Cancel',
+                        content: "Cancel",
                         onClick: () => {
                           if (!this.state.signingOut) {
                             closeModal();
                           }
-                        },
+                        }
                       },
                       {
-                        content: 'Sign out',
+                        content: "Sign out",
                         negative: true,
                         onClick: async () => {
                           if (!this.state.signingOut) {
                             this.setState({ signingOut: true });
                             await Session.end();
                           }
-                        },
-                      },
+                        }
+                      }
                     ]}
                   />
                 );
-              },
-            },
+              }
+            }
           ]}
         />
       </React.Fragment>
