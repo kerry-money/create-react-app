@@ -84,15 +84,6 @@
   "optionalDependencies": {
     "fsevents": "1.2.4"
   },
-  "scripts": {
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "src/**/*.{js?(x)}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
