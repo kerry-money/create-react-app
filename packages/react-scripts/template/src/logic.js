@@ -1,5 +1,5 @@
-import { createLogic } from 'eh-mortar';
-import { actions } from './ducks';
+import { createLogic } from "eh-mortar";
+import { actions } from "./ducks";
 
 export const getUserProfile = createLogic(
   async ({ identifiServicesClient, dispatch }) => {

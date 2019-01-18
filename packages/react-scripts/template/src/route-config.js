@@ -1,7 +1,7 @@
-import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-import Layout from './layout/Layout';
-import { createUnsavedConfirmation, CompleteAuthentication } from 'eh-walls';
+import React from "react";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import Layout from "./layout/Layout";
+import { createUnsavedConfirmation, CompleteAuthentication } from "eh-walls";
 
 export const RouteConfig = () => {
   return (
