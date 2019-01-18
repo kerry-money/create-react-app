@@ -98,8 +98,7 @@ module.exports = function(
     start: "react-scripts start",
     build: "react-scripts build",
     test: "react-scripts test",
-    eject: "react-scripts eject",
-    precommit: "lint-staged"
+    eject: "react-scripts eject"
   };
 
   // Setup the eslint config
@@ -110,8 +109,12 @@ module.exports = function(
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers;
 
+  appPackage.husky = {
+    hooks: { "pre-commit": "lint-staged" }
+  };
+
   appPackage["lint-staged"] = {
-    "src/**/*.{js?(x)}": ["prettier --write", "git add"]
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
   };
 
   fs.writeFileSync(
